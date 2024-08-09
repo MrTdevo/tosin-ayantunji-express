@@ -77,12 +77,10 @@ const handleNoteSave = () => {
     title: noteTitle.value,
     text: noteText.value,
   };
-  saveNote(newNote)
-    .then(() => {
-      getAndRenderNotes();
-      renderActiveNote();
-    })
-    .catch((err) => console.error("Error saving note:", err));
+  saveNote(newNote).then(() => {
+    getAndRenderNotes();
+    renderActiveNote();
+  });
 };
 
 // Delete the clicked note
@@ -97,12 +95,10 @@ const handleNoteDelete = (e) => {
     activeNote = {};
   }
 
-  deleteNote(noteId)
-    .then(() => {
-      getAndRenderNotes();
-      renderActiveNote();
-    })
-    .catch((err) => console.error("Error deleting note:", err));
+  deleteNote(noteId).then(() => {
+    getAndRenderNotes();
+    renderActiveNote();
+  });
 };
 
 // Sets the activeNote and displays it
